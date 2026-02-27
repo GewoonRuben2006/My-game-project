@@ -41,11 +41,11 @@ public class Health : MonoBehaviour
             // For now just destroy, but you can replace with scene reload
             Destroy(gameObject);
         }
-        else if (CompareTag("Enemy"))
-        {
-            // Enemy dies → just destroy enemy
-            Destroy(gameObject);
-        }
+        else  if (CompareTag("Enemy"))
+    {
+        GameManager.Instance.EnemyKilled();
+        Destroy(gameObject);
+    }
         else
         {
             // Anything else
